@@ -3,7 +3,7 @@
 $(document).ready(function() {
   $.ajax({
     method: "POST",
-    url: "http://172.22.78.253:5001/api/v1/places_search/",
+    url: "http://0.0.0.0:5001/api/v1/places_search/",
     data: JSON.stringify({}),
     dataType: "json",
     contentType: "application/json"
@@ -23,7 +23,7 @@ $(document).ready(function() {
             <div class="number_bathrooms">${ place?.number_bathrooms } Bathroom${ place?.number_bathrooms != 1 && "s" }</div>
           </div>
           <div class="user">
-            <b>Owner:</b> ${ place.user?.first_name || place.user?.email } ${ place.user?.last_name }
+            <b>Owner:</b> ${ place.user?.first_name || "" } ${ place.user?.last_name || "" }
           </div>
           <div class="description">
             ${ place?.description || "safe" }
@@ -33,7 +33,7 @@ $(document).ready(function() {
     });
 
   $.ajax({
-    url: "http://172.22.78.253:5001/api/v1/status/",
+    url: "http://0.0.0.0:5001/api/v1/status/",
     success: function() {
       $("#api_status").addClass("available")
     },
