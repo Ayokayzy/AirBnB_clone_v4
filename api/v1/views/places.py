@@ -128,7 +128,7 @@ def search_place():
 
     places_json = []
 
-    if not body["states"] and not body["cities"]:
+    if not body.get("states") and not body.get("cities"):
         for place in storage.all("Place").values():
             places_json.append(place.to_dict())
         print("Show all")

@@ -7,6 +7,20 @@ header {
     align-items: center;
 }
 
+#api_status {
+    margin-left: auto;
+    height: 40px;
+    width: 40px;
+    border-radius: 20px;
+    margin-right: 30px;
+    line-height: 40px;
+    background: #cccccc;
+}
+
+.available {
+    background: #ff545f !important;
+}
+
 .logo {
     width: 142px;
     height: 60px;
